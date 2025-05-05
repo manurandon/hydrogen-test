@@ -145,53 +145,54 @@ export default function Product() {
 
   return (
     <>
-      <Section className="px-0 md:px-8 lg:px-12">
-        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
-          <ProductGallery
-            media={media.nodes}
-            className="w-full lg:col-span-2"
-          />
-          <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
-            <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
-              <div className="grid gap-2">
-                <Heading as="h1" className="whitespace-normal">
-                  {title}
-                </Heading>
-                {vendor && (
-                  <Text className={'opacity-50 font-medium'}>{vendor}</Text>
-                )}
-              </div>
-              <ProductForm
-                productOptions={productOptions}
-                selectedVariant={selectedVariant}
-                storeDomain={storeDomain}
-              />
-              <div className="grid gap-4 py-4">
-                {descriptionHtml && (
-                  <ProductDetail
-                    title="Product Details"
-                    content={descriptionHtml}
-                  />
-                )}
-                {shippingPolicy?.body && (
-                  <ProductDetail
-                    title="Shipping"
-                    content={getExcerpt(shippingPolicy.body)}
-                    learnMore={`/policies/${shippingPolicy.handle}`}
-                  />
-                )}
-                {refundPolicy?.body && (
-                  <ProductDetail
-                    title="Returns"
-                    content={getExcerpt(refundPolicy.body)}
-                    learnMore={`/policies/${refundPolicy.handle}`}
-                  />
-                )}
-              </div>
-            </section>
-          </div>
+      <div className="px-4 pt-6 md:px-12">
+        <ProductGallery media={media.nodes} />
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-12 lg:justify-between">
+          <section className="flex-1">
+            <div className="grid gap-2">
+              <Heading as="h1" className="whitespace-normal">
+                {title}
+              </Heading>
+              {vendor && (
+                <Text className={'opacity-50 font-medium'}>{vendor}</Text>
+              )}
+            </div>
+            <ProductForm
+              productOptions={productOptions}
+              selectedVariant={selectedVariant}
+              storeDomain={storeDomain}
+            />
+            <div className="grid gap-4 py-4">
+              {descriptionHtml && (
+                <ProductDetail
+                  title="Product Details"
+                  content={descriptionHtml}
+                />
+              )}
+              {shippingPolicy?.body && (
+                <ProductDetail
+                  title="Shipping"
+                  content={getExcerpt(shippingPolicy.body)}
+                  learnMore={`/policies/${shippingPolicy.handle}`}
+                />
+              )}
+              {refundPolicy?.body && (
+                <ProductDetail
+                  title="Returns"
+                  content={getExcerpt(refundPolicy.body)}
+                  learnMore={`/policies/${refundPolicy.handle}`}
+                />
+              )}
+            </div>
+          </section>
+          <section className="flex-1">
+            <img src="IMAGE_URL" alt="Feature Image" className="rounded-lg" />
+            <p className="mt-4 text-lg">Product Feature Description</p>
+          </section>
         </div>
-      </Section>
+        <TestimonialsSection />
+        <MapSection />
+      </div>
       <Suspense fallback={<Skeleton className="h-32" />}>
         <Await
           errorElement="There was a problem loading related products"
@@ -636,4 +637,13 @@ async function getRecommendedProducts(
   mergedProducts.splice(originalProduct, 1);
 
   return {nodes: mergedProducts};
+}
+
+// Placeholder components - Replace with your actual components
+function TestimonialsSection() {
+  return <div>Testimonials Placeholder</div>;
+}
+
+function MapSection() {
+  return <div>Map Placeholder</div>;
 }
