@@ -46,7 +46,7 @@ export function ProductCard({
   }
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 transition-transform duration-300 hover:scale-[1.02]">
       <Link
         onClick={onClick}
         to={`/products/${product.handle}`}

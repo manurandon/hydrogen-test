@@ -68,6 +68,9 @@ shop-pay-button {
 
   html {
     scroll-padding-top: 10rem;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   model-viewer::part(default-progress-mask) {
@@ -104,6 +107,18 @@ shop-pay-button {
 }
 
 @layer components {
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-[1.02];
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/30 dark:bg-black/30;
+  }
+
+  .card-shadow {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
   .article {
     h2,
     h3,
