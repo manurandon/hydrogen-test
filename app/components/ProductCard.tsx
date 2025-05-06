@@ -46,15 +46,15 @@ export function ProductCard({
   }
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col">
       <Link
         onClick={onClick}
         to={`/products/${product.handle}`}
-        className="hover:opacity-80 transition-opacity"
+        className="hover:opacity-90 transition-opacity no-underline"
         prefetch="viewport"
       >
-        <div className={clsx('grid gap-4', className)}>
-          <div className="card-image aspect-[4/5] bg-primary/5">
+        <div className={clsx('product-card', className)}>
+          <div className="product-image-container">
             {image && (
               <Image
                 className="object-cover w-full fadeIn"

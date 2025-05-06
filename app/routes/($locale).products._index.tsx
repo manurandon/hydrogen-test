@@ -72,7 +72,9 @@ export default function AllProducts() {
 
   return (
     <>
-      <PageHeader heading="All Products" variant="allCollections" />
+      <PageHeader>
+        <h1 className="text-2xl font-normal text-[#333333] mb-8 uppercase text-center">All Products</h1>
+      </PageHeader>
       <Section>
         <Pagination connection={products}>
           {({nodes, isLoading, NextLink, PreviousLink}) => {

@@ -193,22 +193,23 @@ shop-pay-button {
   }
 
   .product-grid {
-    @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-16 px-6 max-w-6xl mx-auto;
   }
 
   .product-title {
-    @apply text-sm font-normal mt-2;
+    @apply text-base font-normal text-[#333333] mt-4 text-center;
   }
 
   .product-price {
-    @apply text-sm font-normal text-gray-900;
+    @apply text-base font-normal text-[#333333] text-center block mt-1;
   }
 
   .header-nav {
     @apply flex items-center justify-between py-4 px-6 bg-[#333333] text-white;
   }
 
-.product-title, .product-price {
-    @apply text-center font-medium text-base mt-2;
-}
+  .product-image-container {
+    @apply bg-white p-4 flex items-center justify-center;
+    min-height: 300px;
+  }
 }
