@@ -185,10 +185,27 @@ shop-pay-button {
   }
 
   .card-image {
-    @apply relative flex items-center justify-center overflow-hidden rounded-lg w-full;
+    @apply relative flex items-center justify-center overflow-hidden w-full;
+    aspect-ratio: 1/1;
     img {
-      @apply w-full object-cover rounded;
+      @apply w-full h-full object-cover;
     }
+  }
+
+  .product-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4;
+  }
+
+  .product-title {
+    @apply text-sm font-normal mt-2;
+  }
+
+  .product-price {
+    @apply text-sm font-normal text-gray-900;
+  }
+
+  .header-nav {
+    @apply flex items-center justify-between py-4 px-6 bg-[#333333] text-white;
   }
 
 .product-title, .product-price {

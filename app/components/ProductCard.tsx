@@ -46,10 +46,11 @@ export function ProductCard({
   }
 
   return (
-    <div className="flex flex-col items-center gap-4 transition-transform duration-300 hover:scale-[1.02]">
+    <div className="flex flex-col gap-2">
       <Link
         onClick={onClick}
         to={`/products/${product.handle}`}
+        className="hover:opacity-80 transition-opacity"
         prefetch="viewport"
       >
         <div className={clsx('grid gap-4', className)}>
